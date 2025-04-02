@@ -1,0 +1,14 @@
+LLM_SETUP:
+  # The API key for the LLM API
+  API_KEY: "sk-zcpmjwctlnkthagcorztornyziblyxvkjireovscqsymjqyn"
+  # The URL of the LLM API
+  API_URL: "https://api.siliconflow.cn/v1"
+  # model
+  model: "deepseek-ai/DeepSeek-V3"
+
+  temperature: 0.
+  maxtokens: 100
+
+PROMPTS:
+  # The prompt for the first conversation
+  
