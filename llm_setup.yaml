@@ -1,14 +1,18 @@
-LLM_SETUP:
+llm_config:
   # The API key for the LLM API
-  API_KEY: "sk-zcpmjwctlnkthagcorztornyziblyxvkjireovscqsymjqyn"
+  api_key: "sk-zcpmjwctlnkthagcorztornyziblyxvkjireovscqsymjqyn"
   # The URL of the LLM API
-  API_URL: "https://api.siliconflow.cn/v1"
+  base_url: "https://api.siliconflow.cn/v1"
   # model
   model: "deepseek-ai/DeepSeek-V3"
 
   temperature: 0.
-  maxtokens: 100
+  max_tokens: 100
 
-PROMPTS:
-  # The prompt for the first conversation
-  
+
+agent_config:
+  # Agent行为控制
+  verbose: true        # 是否显示内部调试信息
+  intermediate_steps: false  # 是否返回中间推理步骤
+  error_handling: true # 是否启用错误处理机制
+

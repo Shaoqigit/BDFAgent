@@ -1,6 +1,6 @@
 import openai
 
-from bdf_parser import BDFParser
+from bdf_parser_depre import BDFParser
 from function_call import functions
 
 

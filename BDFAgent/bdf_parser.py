@@ -87,11 +87,11 @@ class BDFAnalyzer:
             return {"error": f"Material {material_id} not found"}
 
 
-# 将方法转换为LangChain工具
-# bdf_analyzer = BDFAnalyzer("cantilever_2014.1.bdf")
-bdf_analyzer = BDFAnalyzer("cbush_test.bdf")
-
-tools = [
+def generate_BDF_tools(bdf_analyzer):
+    """
+    generate tools from the given tool class
+    """
+    tools = [
     StructuredTool.from_function(func=bdf_analyzer.get_node_info,
                                  name="NodeInfoQuery",
                                  description="""
@@ -109,4 +109,9 @@ tools = [
         func=bdf_analyzer.get_material_info,
         name="MaterialPropertyQuery",
         description="通过材料ID获取详细属性，输入示例：{{'material_id': 1}}")
-]
+
+    ]
+    return tools
+    
+
+

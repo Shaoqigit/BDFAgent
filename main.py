@@ -1,8 +1,9 @@
+import yaml
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 from BDFAgent.agent import LLMConstructor
-from BDFAgent.bdf_parser import tools
+from BDFAgent.bdf_parser import generate_BDF_tools, BDFAnalyzer
 
 
 # response_chain = (RunnablePassthrough.assign(analysis_results=agent_executor)
@@ -39,11 +40,15 @@ llm.init_prompt([
     NodeInfoQuery, ElementTypeQuery, MaterialPropertyQuery
     
     请按照以下规则响应：
-    - 使用Markdown表格展示多组数据
+    - 使用Json格式展示多组数据
     """),
     ("placeholder", "{agent_scratchpad}"),  # 关键占位符
     ("user", "{input}")
 ])
+
+bdf_analyzer = BDFAnalyzer("cbush_test.bdf")
+tools = generate_BDF_tools(bdf_analyzer)
+
 llm.create_agent(tools, if_verbose=True, intermediate_steps=False, errors_handling=True)
 response = llm.generate_answer("查询模型中的单元编号为129和120的单元属性，并列出材料1的属性")
 
