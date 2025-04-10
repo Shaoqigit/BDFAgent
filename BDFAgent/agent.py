@@ -7,6 +7,7 @@ class LLMConstructor:
     def __init__(self, api_key, base_url, model, other_params):
         """
         initiate the LLM constructor with the given parameters"""
+        print("LLMConstructor initiated")
         self.api_key = api_key
         self.base_url = base_url
         self.model = model
@@ -36,6 +37,7 @@ class LLMConstructor:
         """
         create agent with the given tools and prompt""
         """
+        print("---正在创建Agent---")
         self.agent = create_tool_calling_agent(self.model, tools, self.prompt)
         self.agent_executor = AgentExecutor(
             agent=self.agent,

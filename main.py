@@ -3,7 +3,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
 from BDFAgent.agent import LLMConstructor
-from BDFAgent.bdf_parser import generate_BDF_tools, BDFAnalyzer
+from BDFAgent.bdf_parser import generate_BDF_tools, generate_mesh_tools, BDFAnalyzer, MeshOperator
 
 
 # response_chain = (RunnablePassthrough.assign(analysis_results=agent_executor)
@@ -34,22 +34,39 @@ llm = LLMConstructor(api_key="sk-zcpmjwctlnkthagcorztornyziblyxvkjireovscqsymjqy
                      model="Qwen/Qwen2.5-32B-Instruct",
                      other_params={"temperature": 0.5, "max_tokens": 1024})
 llm.init_LLM()
+# llm.init_prompt([
+#     ("system", """
+#     你是一个有限元分析助手，可以使用以下工具：
+#     NodeInfoQuery, ElementTypeQuery, MaterialPropertyQuery
+    
+#     请按照以下规则响应：
+#     - 使用Json格式展示多组数据
+#     """),
+#     ("placeholder", "{agent_scratchpad}"),  # 关键占位符
+#     ("user", "{input}")
+# ])
+
 llm.init_prompt([
     ("system", """
-    你是一个有限元分析助手，可以使用以下工具：
-    NodeInfoQuery, ElementTypeQuery, MaterialPropertyQuery
+    你是一个有限元分网格处理高手，　可以使用一下工具：
+    MeshConverter
     
-    请按照以下规则响应：
-    - 使用Json格式展示多组数据
     """),
     ("placeholder", "{agent_scratchpad}"),  # 关键占位符
     ("user", "{input}")
 ])
 
-bdf_analyzer = BDFAnalyzer("cbush_test.bdf")
-tools = generate_BDF_tools(bdf_analyzer)
+mesh_operator = MeshOperator("CRM_V12wingbox_COARSE_1.bdf")
+# mesh_operator.convert_mesh("converted_mesh.msh")
+mesh_tools = generate_mesh_tools(mesh_operator)
+
+bdf_analyzer = BDFAnalyzer("CRM_V12wingbox_COARSE_1.bdf")
+bdf_tools = generate_BDF_tools(bdf_analyzer)
+
+tools = bdf_tools + mesh_tools
 
 llm.create_agent(tools, if_verbose=True, intermediate_steps=False, errors_handling=True)
-response = llm.generate_answer("查询模型中的单元编号为129和120的单元属性，并列出材料1的属性")
+# response = llm.generate_answer("把网格转化为gmsh格式且命名为converted_mesh.msh打开Gmsh浏览")
+response = llm.generate_answer("1.查询模型中的单元编号为5417的单元属性 2.把网格转化为gmsh格式且命名为converted_mesh.msh打开Gmsh浏览")
 
 print("Question:", response["input"])
