@@ -1,1 +1,1 @@
-LLM based agent for Nastran BDF relevant manipulation
+LLM based agent for Computer added Engineering (CAE) relevant manipulation
