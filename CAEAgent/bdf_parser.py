@@ -1,11 +1,9 @@
-from langchain_core.tools import StructuredTool
+
 from pyNastran.bdf.bdf import BDF
-import subprocess
 from typing import Optional, List
 
 
 class BDFAnalyzer:
-
     def __init__(self, filepath):
         self.model = BDF()
         self.model.read_bdf(filepath)
@@ -65,7 +63,7 @@ class BDFAnalyzer:
                     "pid":
                     elem.pid,
                     "material_id":
-                    self.model.properties[elem.pid].mid
+                    self.model.properties[elem.pid].Mid
                 })
         return elem_dicts
 
@@ -89,69 +87,5 @@ class BDFAnalyzer:
         except KeyError:
             return {"error": f"Material {material_id} not found"}
         
-class MeshOperator:
-    def __init__(self, mesh_path):
-        self.mesh_path = mesh_path
-
-    def convert_mesh(self, outputmesh_path):
-        print("---正在转换网格格式---")
-        result = subprocess.run(
-            ["meshio", "convert", "-i", "nastran", "-o", "gmsh22", f"{self.mesh_path}", f"{outputmesh_path}"], capture_output=True, text=True, check=True)
-        return result.stdout
-    
-    def open_mesh(self, mesh_path):
-        print("---正在打开网格文件---")
-        result = subprocess.run(
-            ["gmsh", f"{mesh_path}"], capture_output=True, text=True, check=True)
-        return result.stdout
 
 
-
-def generate_BDF_tools(bdf_analyzer):
-    """
-    generate tools from the given tool class
-    """
-    tools = [
-    StructuredTool.from_function(func=bdf_analyzer.get_node_info,
-                                 name="NodeInfoQuery",
-                                 description="""
-        查询有限元模型节点数据，输入格式示例：
-        {{"node_ids": [1001,1002], "count_only": false}}
-        """),
-    StructuredTool.from_function(func=bdf_analyzer.get_element_info,
-                                 name="ElementTypeQuery",
-                                 description="""
-        按单元类型或者单元编号筛选元素，输入示例：
-        {{"element_type": "CQUAD4", "property_details": true}}或者
-        {{"element_ids": [129,120], "property_details": false}}
-        """),
-    StructuredTool.from_function(
-        func=bdf_analyzer.get_material_info,
-        name="MaterialPropertyQuery",
-        description="通过材料ID获取详细属性，输入示例：{{'material_id': 1}}")
-
-    ]
-    return tools
-    
-def generate_mesh_tools(mesh_operator):
-    """"
-    生成网格处理工具
-    """
-    tools = [
-        StructuredTool.from_function(
-            func=mesh_operator.convert_mesh,
-            name="MeshConverter",
-            description="""
-            转换网格格式，输入示例：
-            {{"outputmesh_path": "converted_mesh.msh"}}
-            """),
-        StructuredTool.from_function(
-            func=mesh_operator.open_mesh,
-            name="MeshViewer",
-            description="使用Gmsh打开网格文件进行浏览"),
-    ]
-    return tools
-
-if __name__ == "__main__":
-    mesh_operator = MeshOperator("cbush_test.bdf")
-    mesh_operator.convert_mesh("converted_mesh.msh")
