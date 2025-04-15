@@ -3,8 +3,8 @@ import yaml
 from CAEAgent.agent import LLMConstructor
 from CAEAgent.bdf_parser import BDFAnalyzer 
 from CAEAgent.mesh_operators import MeshOperator
-from CAEAgent.tools import generate_BDF_tools, generate_mesh_tools
-
+from CAEAgent.hyperworks_operator import HyperWorksOperator
+from CAEAgent.tools import generate_BDF_tools, generate_mesh_tools, generate_hyperworks_tools
 
 llm = LLMConstructor(api_key="sk-zcpmjwctlnkthagcorztornyziblyxvkjireovscqsymjqyn",
                      base_url="https://api.siliconflow.cn/v1",
@@ -25,9 +25,8 @@ llm.init_LLM()
 
 llm.init_prompt([
     ("system", """
-    你是一个有限元分析高手，　可以使用一下工具：
-    NodeInfoQuery, ElementTypeQuery, MaterialPropertyQuery, MeshConverter, MeshViewer
-    
+    你是一个有限元分析高手，可以使用以下工具：
+    NodeInfoQuery, ElementTypeQuery, MaterialPropertyQuery, MeshConverter, ImportBDF, GenerateMesh, RunSimulation
     """),
     ("placeholder", "{agent_scratchpad}"),  # 关键占位符
     ("user", "{input}")
@@ -40,10 +39,16 @@ mesh_tools = generate_mesh_tools(mesh_operator)
 bdf_analyzer = BDFAnalyzer(bdf_file)
 bdf_tools = generate_BDF_tools(bdf_analyzer)
 
-tools = bdf_tools + mesh_tools
+# Add HyperWorks tools
+hyperworks_model_path = "test_cases/cbush_test.bdf"
+hyperworks_operator = HyperWorksOperator(hyperworks_model_path)
+hyperworks_tools = generate_hyperworks_tools(hyperworks_model_path)
+
+# Combine all tools
+tools = bdf_tools + mesh_tools + hyperworks_tools
 
 llm.create_agent(tools, if_verbose=True, intermediate_steps=False, errors_handling=True)
-# response = llm.generate_answer("把网格转化为gmsh格式且命名为converted_mesh.msh打开Gmsh浏览")
-response = llm.generate_answer("1.查询模型中的单元编号为5417的单元属性 2.把网格转化为gmsh格式且命名为converted_mesh.msh打开Gmsh浏览")
 
+# 修改问题以使用正确的工具名称和路径
+response = llm.generate_answer("导入BDF模型文件")
 print("Question:", response["input"])
