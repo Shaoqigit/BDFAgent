@@ -1,0 +1,97 @@
+1
+ MACHINE                          MODEL                 OPERATING SYSTEM       MSC Nastran       BUILD DATE         RUN DATE
+ Intel                            386/486/586           Windows 10 Pro 6.2 920 VERSION 2012.2.0  JUL  6, 2012       APR 14, 2025
+
+ 
+                               ===    M S C . N a s t r a n           E X E C U T I O N   S U M M A R Y    ===
+
+ Day_Time  Elapsed     I/O_Mb      Del_Mb     CPU_Sec    Del_CPU    Subroutine
+ 
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    SEMTRN   BGN
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    SEMTRN   END
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    DBINIT   BGN
+      ** CURRENT PROJECT ID = ' "BLANK" '  ** CURRENT VERSION ID =          1
+
+     S U M M A R Y   O F   F I L E   A S S I G N M E N T   F O R   T H E   P R I M A R Y   D A T A B A S E     ( DBSNO   1, V2012.2 )
+
+    ASSIGNED PHYSICAL FILE NAME (/ORIGINAL)      LOGICAL NAME     DBSET        STATUS    BUFFSIZE     CLUSTER SIZE      TIME STAMP
+    ---------------------------------------      ------------     -----        ------    --------     ------------     ------------
+    ./crm_v12wingbox_coarse_1.MASTER             MASTER           MASTER       NEW           8193           1          250414185851
+    ./crm_v12wingbox_coarse_1.DBALL              DBALL            DBALL        NEW           8193           1          250414185852
+    ..._v12wingbox_coarse_1.T16324_48.OBJSCR     OBJSCR           OBJSCR       NEW           8193           1          250414185853
+               **** MEM FILE ****                * N/A *          SCRATCH 
+    ...v12wingbox_coarse_1.T16324_48.SCRATCH     SCRATCH          SCRATCH      NEW           8193           1          250414185854
+    ..._v12wingbox_coarse_1.T16324_48.SCR300     SCR300           SCRATCH      NEW           8193           1          250414185855
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    DBINIT   END
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    XCSA     BGN
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    XCSA     END
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    CGPI     BGN
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    CGPI     END
+ 18:58:51     0:00        0.0         0.0         0.0        0.0    CGPI     END
+
+
+ *** PARALLEL PROCESSES CPU INFORMATION (SECONDS) ***
+
+  MODULE     PROCESS-1     PROCESS-2     PROCESS-3     PROCESS-4     PROCESS-5     PROCESS-6     PROCESS-7     PROCESS-8
+  --------   -----------   -----------   -----------   -----------   -----------   -----------   -----------   -----------
+  ========   ===========   ===========   ===========   ===========   ===========   ===========   ===========   ===========
+  MODULE     PROCESS- 9    PROCESS-10    PROCESS-11    PROCESS-12    PROCESS-13    PROCESS-14    PROCESS-15    PROCESS-16
+  --------   -----------   -----------   -----------   -----------   -----------   -----------   -----------   -----------
+  ========   ===========   ===========   ===========   ===========   ===========   ===========   ===========   ===========
+  
+ *** SYSTEM WARNING MESSAGE 6299 (PARCPU)
+     NO PARALLEL PROCESS CREATED
+
+*** SUMMARY OF COMPONENT SERVICES USAGE ACTIVITY ***
+
+           SERVICE                         LOAD  IMPLEMENTATION    GENERIC             COMPONENT  
+            NAME                           COUNT    LANGUAGE     LIBRARY NAME         LIBRARY NAME 
+
+SCA.Framework.MessageDispatcher              1       C++         SCA/...ispatcher_7_3 e:/0...ramework/MessageDispatcher_7_3.dll 
+SCA.Framework.ResourceManager                1       C++         SCAKernel            SCAKernel                                 
+SCA.Framework.ServiceManager                 8       C++         SCAKernel            SCAKernel                                 
+SCA.Framework.SharedLibraryManager           4       C++         SCAKernel            SCAKernel                                 
+SCA.Framework.TextTranslation                2       C++         SCAKernel            SCAKernel                                 
+SCA.MDSolver.System.PrintServer              2       C++         SCA/...intServer_2_0 e:/0...DSolver/System/PrintServer_2_0.dll 
+
+ *** TOTAL MEMORY AND DISK USAGE STATISTICS ***
+
+ +---------- SPARSE SOLUTION MODULES -----------+         +------------- MAXIMUM DISK USAGE -------------+
+    HIWATER               SUB_DMAP        DMAP               HIWATER               SUB_DMAP        DMAP
+    (WORDS)   DAY_TIME      NAME         MODULE                 (MB)   DAY_TIME      NAME         MODULE
+          0   18:58:51    PREFACE     0  PREFACE               0.438   18:58:51    PREFACE     0  PREFACE 
+
+
+ *** DATABASE USAGE STATISTICS ***
+ 
+ +---------------- LOGICAL DBSETS ----------------+   +------------------------------ DBSET FILES -----------------------------+
+  DBSET     ALLOCATED  BLOCKSIZE       USED   USED     FILE      ALLOCATED  ALLOCATED    HIWATER       HIWATER  I/O TRANSFERRED
+             (BLOCKS)    (WORDS)   (BLOCKS)      %                (BLOCKS)       (GB)   (BLOCKS)          (GB)             (GB)
+ 
+  MASTER         5000       8192         14   0.28     MASTER         5000       0.15         14         0.000            0.000
+  DBALL        500000       8192          5   0.00     DBALL        500000      15.26          5         0.000            0.000
+  OBJSCR         5000       8192          4   0.08     OBJSCR         5000       0.15          4         0.000            0.000
+  SCRATCH     1000100       8192          9   0.00    (MEMFILE         100       0.00          7         0.000            0.000)
+                                                       SCRATCH      500000      15.26          1         0.000            0.000
+                                                       SCR300       500000      15.26          1         0.000            0.000
+                                                                                                                 ==============
+                                                                                                          TOTAL:          0.001
+ 
+ *** BUFFER POOL AND SCRATCH 300 USAGE STATISTICS ***
+ 
+ +----------------- BUFFER POOL -----------------+      +-------------------------- SCRATCH 300 --------------------------+ 
+   OPTION        BLOCKS      BLOCKS      BLOCKS           OPTION    HIWATER               SUB_DMAP        DMAP     OPN/CLS
+  SELECTED     ALLOCATED     REUSED     RELEASED         SELECTED  (BLOCKS)   DAY_TIME      NAME         MODULE    COUNTER
+   BPOOL4           150          67           0              2           1    18:58:51    PREFACE     0  PREFACE       0
+
+
+ *** SUMMARY OF PHYSICAL FILE I/O ACTIVITY ***
+
+ ASSIGNED PHYSICAL FILE NAME                                   RECL (BYTES)  READ/WRITE COUNTS   WSIZE  (WNUM)  MAP-I/O CNT
+ ------------------------------------------------------------  -----------  -------------------  -------------  -----------
+ e:/.../scratch/crm_v12wingbox_coarse_1.T16324_48.SCRATCH            32768          0/1             128KB ( 4)            1 (M)
+ e:/.../2012/scratch/crm_v12wingbox_coarse_1.T16324_48.OBJSCR        32768          2/4             128KB ( 4)            1 (M)
+ ./crm_v12wingbox_coarse_1.MASTER                                    32768          2/4             128KB ( 4)            1 (M)
+ ./crm_v12wingbox_coarse_1.DBALL                                     32768          2/4             128KB ( 4)            1 (M)
+ e:/.../2012/scratch/crm_v12wingbox_coarse_1.T16324_48.SCR300        32768          0/1             128KB ( 4)            1 (M)
+ 

@@ -1,4 +1,5 @@
 import subprocess
+import platform
 
 class MeshOperator:
     def __init__(self, mesh_path):
@@ -12,6 +13,11 @@ class MeshOperator:
     
     def open_mesh(self, mesh_path):
         print("---正在打开网格文件---")
-        result = subprocess.run(
-            ["gmsh", f"{mesh_path}"], capture_output=True, text=True, check=True)
+        print(f"mesh_path: {mesh_path}")  # Debug print to check the mesh_path value
+        if platform.system() == "Windows":
+            result = subprocess.run(
+                ["gmsh.bat", f"{mesh_path}"], capture_output=True, text=True, check=True)
+        else:
+            result = subprocess.run(
+                ["gmsh", f"{mesh_path}"], capture_output=True, text=True, check=True)
         return result.stdout

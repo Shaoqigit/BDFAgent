@@ -1,0 +1,139 @@
+1
+ 
+ 
+ 
+ 
+                      Warning: This computer program is protected by copyright law and international treaties.       
+                  Unauthorized use, reproduction or distribution of this computer program, or any portion of it, may 
+                                          result in severe civil and criminal penalties.                             
+                         Copyright (C) 2012 MSC.Software Corporation and its licensors. All rights reserved.         
+ 
+ 
+                                              * * * * * * * * * * * * * * * * * * * *
+                                              * * * * * * * * * * * * * * * * * * * *
+                                              * *                                 * *
+                                              * *           MSC.SOFTWARE          * *
+                                              * *               CORP              * *
+                                              * *                                 * *
+                                              * *      M S C   N a s t r a n      * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *     Version 2012.2.0-CL151760   * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *          JUL  6, 2012           * *
+                                              * *                                 * *
+                                              * *              Intel              * *
+                                              * *        MODEL 386/486/586        * *
+                                              * *     Windows 10 Pro 6.2 9200     * *
+                                              * *        Compiled for 8664        * *
+                                              * *                                 * *
+                                              * * * * * * * * * * * * * * * * * * * *
+                                              * * * * * * * * * * * * * * * * * * * *
+1News file -  (May 29, 2012):
+  
+               Welcome to MSC Nastran 2012.2
+  
+   Details of the release can be found in the Release Guide available
+   electronically in the installation documentation sub-directory.
+   Additional information can be found at the Nastran Product Support page:
+  
+      http://simcompanion.mscsoftware.com
+  
+   The support page provides links to this valuable information:
+      * A searchable Knowledge Base containing examples and answers to thousands
+        frequently asked questions written by MSC.Software subject-matter experts
+      * Peer-to-peer Discussion Forums enabling you to post questions for your
+        MSC.Software products and receive answers from other users worldwide.
+      * A list of known issues with the product and any workarounds.
+      * Instructions on how to contact technical support
+      * A mechanism for sending us product feedback or enhancement requests.
+      * Hardware and software requirements.
+      * Examples and Tutorials
+      * and much more.
+  
+   For information on training, please visit our Training web site
+  
+      http://www.mscsoftware.com/Contents/Services/Training/
+  
+   MSC Nastran brings powerful new features and enhancements for engineering
+   solutions. For a detailed description of features added to MSC Nastran 2012.2
+   Release Guide.
+   The highlights for the 2012.1 release include:
+      * MD and MSC Products have been consolidated into one release.
+      * Improved Performance when using ACMS especially with Parallel Processing
+      * A New Method for Complex Eigenvalue Analysis which has Greater Accuracy
+      * Improved performance for the Solution of Nonsymmetric systems encountered
+        with Exterior Acoustics, Friction and complex Lanczos
+      * Support of GPU computing
+      * Structural Interior - Exterior Acoustics can be performed using Weakly
+        Coupled Procedure which is Faster in SOL 111 and SOL 200
+      * Complex stress recovery for Shells in SOL 108,109, 111 and 112.
+      * Improved coupling with ACTRAN for modeling of Trimming material in SOL 10
+        and SOL 111
+      * Panel Participation Factor may be obtained for the Structural Response an
+        may be utilized in optimization.
+      * Easier to use Linear Contact Capability in SOL 400
+      * Improved Time Stepping procedure in SOL 400
+      * Coupled Thermal-Structural Analysis with SOL 700
+      * Wood and Ice Model in SOL 700
+      * Improved Computational Performance for FSI simulations on Parallel Proces
+      * Improved Splining techniques in Aeroelastic calculations
+ The highlights for the 2012.2 release include:
+1     * Reduction in I/O times for large models which had significant I/O in
+        previous releases
+      * Improved performance when using SOL 400 for nonlinear analysis
+      * The Segment-to-Segment Contact Procedure is expanded for Large Deformatio
+        and Friction
+      * User can easily add mass to CBUSH elements
+  
+  
+  
+  
+  
+  
+  
+  
+  
+1                                                                             APRIL  14, 2025  MSC.NASTRAN  7/ 6/12   PAGE     1
+                                                                                                                                    
+0        N A S T R A N    F I L E    A N D    S Y S T E M    P A R A M E T E R    E C H O                                           
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+     NASTRAN BUFFSIZE=8193 $(E:/06_OTHERSOFT/04_CAE/NASTRAN/2012/CONF/NAST20122.RCF[2
+     NASTRAN REAL=2144075776 $(PROGRAM DEFAULT)                                      
+     $$------------------------------------------------------------------------------
+     $$                                                                              
+     $$ NASTRAN INPUT DECK GENERATED BY HYPERMESH VERSION  :11.0.0.4                 
+     $$ GENERATED USING HYPERMESH-NASTRAN TEMPLATE VERSION : 11.0.0.47               
+     $$                                                                              
+     $$   TEMPLATE:  GENERAL                                                         
+     $$                                                                              
+     $$------------------------------------------------------------------------------
+     $$------------------------------------------------------------------------------
+     $$                      EXECUTIVE CONTROL CARDS                                 
+     $$------------------------------------------------------------------------------
+1                                                                             APRIL  14, 2025  MSC.NASTRAN  7/ 6/12   PAGE     2
+                                                                                                                                    
+0        N A S T R A N    E X E C U T I V E    C O N T R O L    E C H O                                                             
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+     CEND                                                                                    
+ *** USER INFORMATION MESSAGE 480 (XSEMIN)
+     JOB TERMINATED DUE TO LACK OF SOL, COMPILE, OR LINK CARDS IN THE EXECUTIVE CONTROL SECTION.
+ 
+ No PARAM values were set in the Control File.
+ 
+1                                        * * * END OF JOB * * *
+ 
+ 
+No Symbolic Replacement variables or values were specified.
+
+ *** USER WARNING MESSAGE 1153 (XCLNUP)
+     THE NDDL FOR THIS DATA BASE HAS NEITHER BEEN CREATED NOR OBTAINED FROM THE DELIVERY DATA BASE.
+     USER INFORMATION: THE DATA BASE CREATED IN THIS RUN IS TOO IMMATURE TO BE RESTARTED.
+     USER ACTION: DELETE THIS DATA BASE BEFORE STARTING YOUR NEXT RUN.

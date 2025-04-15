@@ -1,0 +1,112 @@
+MSC.Nastran V2012.2 (Intel Windows 10 Pro 6.2 9200) Control File: 
+----------------------------------------------------------------- 
+Nastran BUFFSIZE=8193 $(e:/06_othersoft/04_cae/nastran/2012/conf/nast20122.rcf[2])
+Nastran REAL=2144075776 $(program default)
+JID='E:\04_Projects\02_AI\agent4nastran\CAEAgents\test_cases\wingbox\crm_v12wingbox_coarse_1.bdf'
+OUT='./crm_v12wingbox_coarse_1'
+MEM=33554432      $ WORDS
+MACH='Intel'
+OPER='Windows 10 Pro'
+OSV='6.2 9200'
+MODEL='P5-4/4790 (DESKTOP-9RCDAF9)'
+NPROC='16'
+CONFIG=15
+NPROC=16
+symbol=DELDIR='e:/06_othersoft/04_cae/nastran/2012/msc20122/nast/del' $(program default)
+symbol=DEMODIR='e:/06_othersoft/04_cae/nastran/2012/msc20122/nast/demo' $(program default)
+symbol=LM_NO_SNMP=1 $(e:/06_othersoft/04_cae/nastran/2012/conf/nast20122.rcf[5])
+symbol=NASD_PATH=\msc20122\dyna\ $(e:/06_othersoft/04_cae/nastran/2012/conf/nast20122.rcf[7])
+symbol=NASM_PATH=\msc20122\marc\tools $(e:/06_othersoft/04_cae/nastran/2012/conf/nast20122.rcf[6])
+symbol=SSSALTERDIR='e:/06_othersoft/04_cae/nastran/2012/msc20122/nast/sssalter' $(program default)
+symbol=TPLDIR='e:/06_othersoft/04_cae/nastran/2012/msc20122/nast/tpl' $(program default)
+SDIR='e:/06_othersoft/04_cae/nastran/2012/scratch/crm_v12wingbox_coarse_1.T16324_48'
+DBS='./crm_v12wingbox_coarse_1'
+SCR='no'
+NEWDEL='e:/06_othersoft/04_cae/nastran/2012/msc20122/win64/SSS'
+DEL='MSCDEF'
+DML=MSCDEF
+SDL=MSCDEF
+AUTH='E:\01_installer\MSC Actran 2024.2\Crack\license.dat'
+AUTHQUE=20
+MSGCAT='e:/06_othersoft/04_cae/nastran/2012/msc20122/win64/analysis.msg'
+MSGDEST='f06'
+NEWS='e:/06_othersoft/04_cae/nastran/2012/msc20122/nast/news.txt'
+----------------------------------------------------------------- 
+MSC_ISHELLPATH=e:\04_projects\02_ai\agent4nastran\caeagents\test_cases\wingbox 
+MSC_JIDPATH= 
+PATH=e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\lib;e:\06_othersoft\04_cae\nastran\2012\msc20122\win64;E:\06_othersoft\02_python\envs\ai4is;E:\06_othersoft\02_python\envs\ai4is\Library\mingw-w64\bin;E:\06_othersoft\02_python\envs\ai4is\Library\usr\bin;E:\06_othersoft\02_python\envs\ai4is\Library\bin;E:\06_othersoft\02_python\envs\ai4is\Scripts;E:\06_othersoft\02_python\envs\ai4is\bin;E:\06_othersoft\02_python\condabin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs;E:\02_coding\Microsoft VS Code\bin;E:\03_DevOps\Git\cmd;E:\05_software\bin;C:\Program Files\Docker\Docker\resources\bin;E:\Ollama;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;E:\06_othersoft\02_python\Scripts;E:\06_othersoft\02_python\Library\bin;E:\06_othersoft\03_others\vim\vim91;E:\06_othersoft\04_CAE\nastran\2012\msc20122\win64;C:\Users\Administrator\AppData\Roaming\Python\Python312\Scripts;C:\Users\Administrator\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python311\Scripts;C:\Users\Administrator\AppData\Local\Programs\Python\Python311;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs;E:\02_coding\cursor\resources\app\bin;C:\Users\Administrator\AppData\Local\Programs\Ollama;E:\Ollama;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;E:\06_othersoft\03_others\vim\vim91;. 
+SCA_SERVICE_CATALOG=e:\06_othersoft\04_cae\nastran\2012\msc20122\res\SCAServiceCatalog.xml 
+SCA_RESOURCE_DIR=e:\06_othersoft\04_cae\nastran\2012\msc20122\res 
+Cmd Line:    nastran.exe CRM_V12wingbox_COARSE_1.bdf 
+Current Dir: E:\04_Projects\02_AI\agent4nastran\CAEAgents\test_cases\wingbox 
+Time Cmd:    e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\msctime 
+Executable:  e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\analysis.exe 
+Arch= Kywd:  [Not specified]  
+MSC_MSG:     stderr  
+FPE:         yes  
+----------------------------------------------------------------- 
+Current resource limits:
+ Physical memory:                    31957 MB
+ Physical memory available:          13104 MB
+ Paging file size:                   68821 MB
+ Paging file size available:         40261 MB
+ Virtual memory:                 134217727 MB
+ Virtual memory available:       134213533 MB
+----------------------------------------------------------------- 
+System configuration:
+ Hostname:         DESKTOP-9RCDAF9
+ Architecture:     win64
+ Platform:         Intel Windows 10 Pro 6.2 9200 (Windows Compute Cluster)
+ Model:            P5-4/15587
+ Clock freq.:      15550 MHz
+ Number of CPUs:   16
+ Executable:       standard
+ Raw model ID:     15
+ Config number:    15
+ Physical memory:  31957 MB
+ Virtual memory:   68821 MB
+ Numeric format:   32-bit little-endian IEEE.
+ Bytes per word:   4
+ Disk block size:  512 bytes (128 words)
+ Remote shell cmd: "e:/06_othersoft/04_cae/nastran/2012/msc20122/win64/mscrmtcmd.exe" (Windows non-CCS nodes, UNIX)
+                   <ccs_cmd> (Windows CCS nodes)
+----------------------------------------------------------------- 
+MSC.Nastran started  Mon Apr 14 18:58:49 中国标准时间 2025 
+ 18:58:50  Beginning Analysis
+SCA Kernel 7.3.119418 successfully initialized
+BLAS/LAPACK .dll "e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\mkl_core.dll" has been loaded.
+BLAS/LAPACK .dll "e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\mkl_intel_thread.dll" has been loaded.
+BLAS/LAPACK .dll "e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\mkl_rt.dll" has been loaded.
+BLAS/LAPACK .dll "e:\06_othersoft\04_cae\nastran\2012\msc20122\win64\MSCblas.dll" has been loaded.
+
+ 18:58:51  MSC Authorization Information - System Attributes (1004, 0)
+ 18:58:51  -----------------------------------------------------------
+  Date:          Mon Apr 14 18:58:51 2025
+  MSC Id:        00155d986d27 (ethernet) (Intel)
+  Hostname:      DESKTOP-9RCDAF9 (user Administrator, display DESKTOP-9RCDAF9)
+  License files: E:\01_installer\MSC Actran 2024.2\Crack\license.dat
+  CEID:          -0046D9FE
+  User:          Administrator
+  Display:       DESKTOP-9RCDAF9
+  LAPI Version:  LAPI 9.3.1-2109 (FLEXlm 11.9.0.0)
+
+  * * * * * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * * * * * * *
+  * *                                 * *
+  * *   MSC Customer Entitlement ID   * *
+  * *        -0046D9FE                * *
+  * *                                 * *
+  * * * * * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * * * * * * *
+
+ 18:58:51  MSC Authorization Information - Checkout Successful (1016, 0)
+ 18:58:51  -------------------------------------------------------------
+ 18:58:51  Acquired 1 license for MSC.Nastran from license server on host DESKTOP-9RCDAF9
+
+ 18:58:51  261 records read from JID file "E:\04_Projects\02_AI\agent4nastran\CAEAgents\test_cases\wingbox\crm_v12wingbox_coarse_1.bdf"
+ 18:58:51  NSEXIT: EXIT(0)
+ 18:58:51  Analysis complete  0
+Real:        1.557 seconds ( 0:00:01.557)
+User:        0.921 seconds ( 0:00:00.921)
+Sys:         0.062 seconds ( 0:00:00.062)
+MSC.Nastran finished Mon Apr 14 18:58:51 中国标准时间 2025 

@@ -1,7 +1,9 @@
+from langchain import tools
 from langchain_core.tools import StructuredTool
 
 from CAEAgent.bdf_parser import BDFAnalyzer
 from CAEAgent.mesh_operators import MeshOperator
+from CAEAgent.nastran_runner import NastranRunner
 
 
 
@@ -51,6 +53,28 @@ def generate_mesh_tools(mesh_operator: MeshOperator):
             {{"mesh_path": "converted_mesh.msh"}}"""),
     ]
     return tools
+
+def generate_nastran_tools(nastran_runner: NastranRunner):
+    """
+    生成Nastran仿真工具
+    """
+    tools = [
+        StructuredTool.from_function(
+            func=nastran_runner.execute_nastran_tool,
+            name="execute_nastran",
+            description= """
+            执行Nastran仿真任务
+            必填参数:
+            - command: 可选参数和指定工作目录组合而成的完整命令，例如：
+            'memory=16gb'
+            - working_dir: （可选）指定工作目录
+            输入示例：
+            {{"command": "memory=16gb"}}
+            """),
+    ]
+
+    return tools
+
 
 if __name__ == "__main__":
     mesh_operator = MeshOperator("cbush_test.bdf")
